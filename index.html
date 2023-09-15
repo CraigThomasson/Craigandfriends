@@ -9,9 +9,10 @@
     <div id="album"></div>
     <script>
         async function getAlbum() {
-            let albumResponse = await fetch("http://127.0.0.1:8081/album");
+            let albumResponse = await fetch("http://127.0.0.1:8081/albums/");
             let album = await albumResponse.json();
-            document.getElementById("album").innerHTML = album.name;
+            console.log(albumResponse)
+            document.getElementById("album").innerHTML = album.artist;
         }
         // function getAlbumStuffWithThen() {
         //     fetch("https://swapi.dev/api/planets/3")
