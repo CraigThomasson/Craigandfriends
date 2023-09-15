@@ -7,25 +7,17 @@
 </head>
 <body>
     <div id="album"></div>
-    <script>
+    <!-- <script>
         async function getAlbum() {
-            let albumResponse = await fetch("http://127.0.0.1:8081/albums/");
+            let albumResponse = await fetch("http://127.0.0.1:5500/albums/");
             let album = await albumResponse.json();
             console.log(albumResponse)
             document.getElementById("album").innerHTML = album.artist;
         }
-        // function getAlbumStuffWithThen() {
-        //     fetch("https://swapi.dev/api/planets/3")
-        //         .then((starWarsDataResponse) => {
-        //             starWarsDataResponse.json()
-        //                 .then((planet) => {
-        //                     document.getElementById("starwars").innerHTML += planet.name;
-        //                 })
-        //         });
-        // }
+      
 
-        // getSomeStarWarsStuff();
-        // document.getElementById("starwars").innerHTML = "hello world";
-    </script>
+        getAlbum();
+        document.getElementById("album").innerHTML = "hello world";
+    </script> -->
 </body>
 </html>

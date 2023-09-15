@@ -13,20 +13,20 @@ app.get('/albums', function (req, res) {
   })
 })
 
-app.get('/albums/:id', function (req, res) {
-  fs.readFile(__dirname + '/' + 'albums.json', 'utf8', function (err, data) {
-	   var idOfAlbum = req.params.id
-	   data = JSON.parse(data)
-	   console.log('you requested album ' + idOfAlbum)
-	   for (var i = 0; i < data.length; i++) {
-      if (data[i].id == idOfAlbum) {
-		   		var returnAlbum = data[i]
-      }
-	   }
-    console.log(returnAlbum)
-    res.end(JSON.stringify(returnAlbum))
-  })
-})
+// app.get('/albums/:id', function (req, res) {
+//   fs.readFile(__dirname + '/' + 'albums.json', 'utf8', function (err, data) {
+// 	   var idOfAlbum = req.params.id
+// 	   data = JSON.parse(data)
+// 	   console.log('you requested album ' + idOfAlbum)
+// 	   for (var i = 0; i < data.length; i++) {
+//       if (data[i].id == idOfAlbum) {
+// 		   		var returnAlbum = data[i]
+//       }
+// 	   }
+//     console.log(returnAlbum)
+//     res.end(JSON.stringify(returnAlbum))
+//   })
+// })
 
 app.delete('/albums/:id', function (req, res) {
   fs.readFile(__dirname + '/' + 'albums.json', 'utf8', function (err, data) {
@@ -83,7 +83,7 @@ app.put('/albums', function (req, res) {
   res.end('album updated if it existed')
 })
 
-var server = app.listen(8081, function () {
+var server = app.listen(5500, function () {
   var host = server.address().address
   var port = server.address().port
 })
