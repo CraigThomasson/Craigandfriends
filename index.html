@@ -6,8 +6,25 @@
     <title>Frontend</title>
 </head>
 <body>
-    <div>
-        
-    </div>
+    <div id="album"></div>
+    <script>
+        async function getAlbum() {
+            let albumResponse = await fetch("http://127.0.0.1:8081/album");
+            let album = await albumResponse.json();
+            document.getElementById("album").innerHTML = album.name;
+        }
+        // function getAlbumStuffWithThen() {
+        //     fetch("https://swapi.dev/api/planets/3")
+        //         .then((starWarsDataResponse) => {
+        //             starWarsDataResponse.json()
+        //                 .then((planet) => {
+        //                     document.getElementById("starwars").innerHTML += planet.name;
+        //                 })
+        //         });
+        // }
+
+        // getSomeStarWarsStuff();
+        // document.getElementById("starwars").innerHTML = "hello world";
+    </script>
 </body>
 </html>
